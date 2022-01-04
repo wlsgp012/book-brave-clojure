@@ -126,3 +126,44 @@
 (def inc3 (inc-maker 3))
 
 (inc3 7)
+
+;; let
+(let [x 3]
+  x)
+
+(def x 0)
+(let [x 1] x)
+(let [x (inc x)] x)
+
+;; into
+(into [:b] (set [:a :a]))
+(into '(:b) (set '(:a :a)))
+(into () '(1 2 3))
+(into [] [1 2 3])
+
+;; loop
+(loop [iteration 0]
+  (println (str "Iteration " iteration))
+  (if (> iteration 3)
+    (println "GoodBye!")
+    (recur (inc iteration))))
+
+(defn recursive-printer
+  ([]
+   (recursive-printer 0))
+  ([iteration]
+   (println iteration)
+   (if (> iteration 3)
+     (println "Goodbye!")
+     (recursive-printer (inc iteration)))))
+
+;; reduce
+(reduce + [ 1 2 3 4])
+(reduce + 15 [1 2 3 4])
+
+(defn my-reduce
+  ([f initial coll]
+   (loop [result initial remaining coll]
+     (if (empty? remaining)
+       result
+       (recur (f result (first remaining)) (rest remaining))))))
