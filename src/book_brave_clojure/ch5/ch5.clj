@@ -42,3 +42,7 @@
   x)
 
 (def memo-sleepy-identity (memoize sleepy-identity))
+
+;; assoc-in & get-in
+(assoc-in {} [:cookie :monster :vocals] "Finntroll")
+(get-in {:cookie {:monster {:vocals "Finntroll"}}} [:cookie :monster])
