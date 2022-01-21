@@ -95,3 +95,4 @@
   (future (println "Here's some Ferengi wisdom:" @ferengi-wisdom-promise))
   (Thread/sleep 100)
   (deliver ferengi-wisdom-promise "Whisper your way to success."))
+q
