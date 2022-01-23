@@ -109,7 +109,6 @@
   [{:keys [lat lng]}]
   (println (str "latitude: " lat))
   (println (str "longitude: " lng)))
-
 ;; anonymous function
 (map (fn [name] (str "Hi, " name)) ["Darth Vader" "Mr. Magoo"])
 
