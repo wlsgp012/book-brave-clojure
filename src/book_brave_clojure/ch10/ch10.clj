@@ -21,6 +21,10 @@
 
 (def nsname (s/replace (str (ns-name *ns*)) #"-" "_"))
 
+(defn get-nsname
+  [ns]
+  (s/replace (str (ns-name ns)) #"-" "_"))
+
 (defn get-file-path
   [nsname]
   (str "src/"
